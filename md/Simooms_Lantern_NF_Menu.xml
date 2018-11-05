@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mdscript name="Simooms_Lantern_NF_Menu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
   <cues>
-    <cue name="SummonShip" instantiate="true" namespace="this">
-      <conditions>
-        <check_any>
-          <event_conversation_next_section sectionprefix="SimoomsLanternNF_summon_ship" />
-          <event_conversation_returned_to_section sectionprefix="SimoomsLanternNF_summon_ship" />
-        </check_any>
-      </conditions>
+    <library name="Init">
       <actions>
+        <set_value name="$debugchance" exact="0" />
         <!-- Ship templates -->
         <!-- [macro, crew faction, build drones, cargo drones, defence drones, mining drones (ore), mining drones (gas)] -->
-        <set_value name="$shiptpl" exact="table[
+        <set_value name="$shiptable" exact="table[
           $size_l = table[
             $fight = [
               [macro.units_size_l_antifighter_01_macro,          'argon', 40, 10, 100, 0, 0],
@@ -134,38 +129,43 @@
             ]
           ]
         ]" />
-        <do_if value="event.param == 'SimoomsLanternNF_summon_ship'">
-          <add_player_choice_sub text="'Size XL'" position="top_left" section="SimoomsLanternNF_summon_ship_size_xl" comment="Size XL" />
-          <add_player_choice_sub text="'Size L'" position="left" section="SimoomsLanternNF_summon_ship_size_l" comment="Size L" />
+      </actions>
+    </library>
+    <library name="Cleanup">
+      <actions>
+        <remove_value name="$shiptable" />
+        <remove_value name="$debugchance" />
+      </actions>
+    </library>
+    <cue name="SectionHandler" instantiate="true" namespace="this">
+      <conditions>
+        <check_any>
+          <event_conversation_next_section sectionprefix="SimoomsLanternNF_" />
+          <event_conversation_returned_to_section sectionprefix="SimoomsLanternNF_" />
+        </check_any>
+      </conditions>
+      <actions>
+        <include_actions ref="Init" />
+        <debug_text text="'Event: %s param: %s param2: %s param3: %s'.[event.name, event.param, event.param2, event.param3]" chance="$debugchance" filter="general" />
+        <do_if value="event.param == 'SimoomsLanternNF_choosesize'">
+          <add_player_choice_sub text="'Size XL'" position="top_left" section="SimoomsLanternNF_choosepurpose" choiceparam="$shiptable.$size_xl" comment="Size XL" />
+          <add_player_choice_sub text="'Size L'" position="left" section="SimoomsLanternNF_choosepurpose" choiceparam="$shiptable.$size_l" comment="Size L" />
           <add_player_choice_return text="{1002,20}" position="bottom_right" comment="(Back)" />
         </do_if>
-        <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_size_l'">
-          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$fight, 0]" />
-          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$trade, 0]" />
-          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$mine, 0]" />
-          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$build, 0]" />
-          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$other, 0]" />
+        <do_elseif value="event.param == 'SimoomsLanternNF_choosepurpose'">
+          <set_value name="$ships" exact="event.param2" />
+          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships.$fight, 0]" baseparam="$ships" selectable="$ships.$fight.count" />
+          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships.$trade, 0]" baseparam="$ships" selectable="$ships.$trade.count" />
+          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships.$mine, 0]" baseparam="$ships" selectable="$ships.$mine.count" />
+          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships.$build, 0]" baseparam="$ships" selectable="$ships.$build.count" />
+          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships.$other, 0]" baseparam="$ships" selectable="$ships.$other.count" />
           <add_player_choice_return text="{1002,20}" comment="(Back)" />
+          <remove_value name="$ships" />
         </do_elseif>
-        <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_size_xl'">
-          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$fight, 0]" />
-          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$trade, 0]" />
-          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$mine, 0]" />
-          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$build, 0]" />
-          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$other, 0]" />
-          <add_player_choice_return text="{1002,20}" comment="(Back)" />
-        </do_elseif>
-        <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_select'">
-          <debug_text text="'Event: %s param: %s param2: %s param3: %s'.[event.name, event.param, event.param2, event.param3]" chance="0" filter="general" />
-          <do_if value="event.name" exact="'event_conversation_returned_to_section'">
-            <set_value name="$ships" exact="if event.param3 then event.param3.{1} else []" />
-            <set_value name="$page" exact="if event.param3 then event.param3.{2} else 0" />
-          </do_if>
-          <do_else>
+        <do_elseif value="event.param == 'SimoomsLanternNF_selectcapitalship'">
+          <do_if value="event.param2 and event.param2.count">
             <set_value name="$ships" exact="event.param2.{1}" />
             <set_value name="$page" exact="event.param2.{2}" />
-          </do_else>
-          <do_if value="$ships.count">
             <set_value name="$current" exact="$ships.clone" />
             <do_all exact="$page * 4">
               <remove_value name="$current.{1}" />
@@ -178,15 +178,15 @@
               <add_player_choice_subconv text="$current.{5}.{1}.name" tooltip="$current.{5}.{1}.id" position="right" conversation="SimoomsLantern_summon_ship_player" convparam="$current.{5}" actor="player.computer" chance="100 * ($current.count == 5)" />
             </do_if>
             <do_else>
-              <add_player_choice_sub text="'More...'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships, $page + 1]" />
+              <add_player_choice_sub text="'More...'" position="right" section="SimoomsLanternNF_selectcapitalship" choiceparam="[$ships, $page + 1]" baseparam="event.param2" />
             </do_else>
-            <add_player_choice_return text="{1002,20}" position="bottom_right" returnparam="[$ships, $page - 1]" comment="(Back)" />
+            <add_player_choice_return text="{1002,20}" position="bottom_right" comment="(Back)" />
             <remove_value name="$current" />
+            <remove_value name="$ships" />
+            <remove_value name="$page" />
           </do_if>
-          <remove_value name="$ships" />
-          <remove_value name="$page" />
-          <remove_value name="$shiptpl" />
         </do_elseif>
+        <include_actions ref="Cleanup" />
       </actions>
     </cue>
   </cues>

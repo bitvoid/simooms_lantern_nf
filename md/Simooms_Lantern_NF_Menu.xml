@@ -9,146 +9,150 @@
         </check_any>
       </conditions>
       <actions>
-        <!-- Size L ship templates -->
+        <!-- Ship templates -->
         <!-- [macro, crew faction, build drones, cargo drones, defence drones, mining drones (ore), mining drones (gas)] -->
-        <set_value name="$ships_l_fight" exact="[
-          [macro.units_size_l_antifighter_01_macro,          'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_canteran_frigate_macro,        'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_cs_omicron_ship_02_mk6_macro,  'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_cs_omicron_ship_02_mk6a_macro, 'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_cs_omicron_ship_03_sa_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_dv_arb_new_defence_macro,      'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_dv_fury_new_defence_macro,     'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_dv_kit_new_defence_plus_macro, 'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_laserjet_01_macro,             'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_missileb_01_macro,             'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_pir_besieger_frig_macro,       'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_pir_container_03_macro,        'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_pir_vanguard_frig_macro,       'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_player_fury_macro,             'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_player_harpy_macro,            'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_troop_transporter1_macro,      'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_troop_transporter5_macro,      'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_weaponplatform_macro,          'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_xenon_01_dc_macro,             'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_l_xenon_newk_macro,              'argon', 40, 10, 100, 0, 0]
-        ]" />
-        <set_value name="$ships_l_trade" exact="[
-          [macro.units_size_l_b_sanahar_macro,      'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_e_sanahar_macro,      'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_hyb1_sanahar_macro,   'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_hyb2_sanahar_macro,   'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_kit_cargo_03_macro,   'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_kit_cargo_03e_macro,  'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_kit_cargo_03s_macro,  'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_kit_fuel_03_macro,    'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_kit_hybrid_q_macro,   'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_li_sanahar_macro,     'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_l_xenon_01_cargo_macro, 'argon', 20, 100, 30, 0, 0]
-        ]" />
-        <set_value name="$ships_l_mine" exact="[
-          [macro.units_size_l_kit_miner_03s_macro,      'argon', 20, 10, 20, 100, 0],
-          [macro.units_size_l_kit_minerl_03s_macro,     'argon', 20, 10, 20, 0, 100],
-          [macro.units_size_l_xenon_01_collector_macro, 'argon', 20, 10, 20, 0, 100]
-        ]" />
-        <set_value name="$ships_l_build" exact="[
-          [macro.units_size_l_xenon_outk_macro, 'argon', 20, 10, 20, 50, 50]
-        ]" />
-        <set_value name="$ships_l_other" exact="[
-          [macro.units_size_l_kit_repairship_macro, 'argon', 80, 20, 50, 0, 0]
-        ]" />
-        <!-- Size XL ship templates -->
-        <!-- [macro, crew faction, build drones, cargo drones, defence drones, mining drones (ore), mining drones (gas)] -->
-        <set_value name="$ships_xl_fight" exact="[
-          [macro.units_size_xl_capital_destroyer_1_mk2_macro,  'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_capital_destroyer_2_mk2_macro,  'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_repairship_02_macro, 'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_5_macro,     'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_dc_macro,    'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_mk2_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_mk5_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_mk6_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_pir_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_x_macro,     'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_xc_macro,    'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_y_macro,     'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_02_yz_macro,    'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_03_mk2_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_04_dw_macro,    'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_04_mk2_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_cs_omicron_ship_04_mk3_macro,   'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_fort_macro,                     'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_kit_destroyer_01_macro,         'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_kit_pirate_10_macro,            'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_player_behemoth_macro,          'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_player_chimera_macro,           'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_player_hades_macro,             'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_split_m1s_macro,                'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_split_m2r_macro,                'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_split_m2s_macro,                'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_van_destroyer_macro,            'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_van_destroyer_mk2_macro,        'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_xenon_01_c_macro,               'argon', 40, 10, 100, 0, 0],
-          [macro.units_size_xl_xenon_newi_macro,               'argon', 40, 10, 100, 0, 0]
-        ]" />
-        <set_value name="$ships_xl_trade" exact="[
-          [macro.units_size_xl_capital_destroyer_2_cargo_macro, 'argon', 25, 50, 75, 0, 0],
-          [macro.units_size_xl_kit_cargo_01_macro,              'argon', 20, 100, 30, 0, 0],
-          [macro.units_size_xl_split_tls_macro,                 'argon', 20, 100, 30, 0, 0]
-        ]" />
-        <set_value name="$ships_xl_mine" exact="[
-          [macro.units_size_xl_split_tls_gas_macro, 'argon', 20, 10, 20, 0, 100],
-          [macro.units_size_xl_split_tls_ore_macro, 'argon', 20, 10, 20, 100, 0]
-        ]" />
-        <set_value name="$ships_xl_build" exact="[
-          [macro.units_size_xl_builder_pir_macro,        'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_pir2_macro,       'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_pir3_macro,       'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_player_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_player2_macro,    'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_player3_macro,    'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_2_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_3_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_dv_2_macro,  'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_dv_3_macro,  'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_ol_2_macro,  'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_ship_ol_3_macro,  'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hoa_macro,        'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hoa2_macro,       'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hoa3_macro,       'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_pmxe_macro,       'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hv_macro,         'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hv2_macro,        'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_hv3_macro,        'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_xenon_next_macro, 'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_player_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_xenon_macro,      'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_xenon2_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_xenon3_macro,     'argon', 20, 10, 20, 50, 50],
-          [macro.units_size_xl_builder_outpost_macro,    'argon', 20, 10, 20, 50, 50]
-        ]" />
-        <set_value name="$ships_xl_other" exact="[
-          [macro.units_size_xl_capital_destroyer_2_care_macro, 'argon', 40, 10, 100, 0, 0]
+        <set_value name="$shiptpl" exact="table[
+          $size_l = table[
+            $fight = [
+              [macro.units_size_l_antifighter_01_macro,          'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_canteran_frigate_macro,        'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_cs_omicron_ship_02_mk6_macro,  'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_cs_omicron_ship_02_mk6a_macro, 'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_cs_omicron_ship_03_sa_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_dv_arb_new_defence_macro,      'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_dv_fury_new_defence_macro,     'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_dv_kit_new_defence_plus_macro, 'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_laserjet_01_macro,             'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_missileb_01_macro,             'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_pir_besieger_frig_macro,       'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_pir_container_03_macro,        'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_pir_vanguard_frig_macro,       'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_player_fury_macro,             'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_player_harpy_macro,            'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_troop_transporter1_macro,      'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_troop_transporter5_macro,      'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_weaponplatform_macro,          'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_xenon_01_dc_macro,             'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_l_xenon_newk_macro,              'argon', 40, 10, 100, 0, 0]
+            ],
+            $trade = [
+              [macro.units_size_l_b_sanahar_macro,      'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_e_sanahar_macro,      'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_hyb1_sanahar_macro,   'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_hyb2_sanahar_macro,   'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_kit_cargo_03_macro,   'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_kit_cargo_03e_macro,  'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_kit_cargo_03s_macro,  'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_kit_fuel_03_macro,    'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_kit_hybrid_q_macro,   'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_li_sanahar_macro,     'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_l_xenon_01_cargo_macro, 'argon', 20, 100, 30, 0, 0]
+            ],
+            $mine = [
+              [macro.units_size_l_kit_miner_03s_macro,      'argon', 20, 10, 20, 100, 0],
+              [macro.units_size_l_kit_minerl_03s_macro,     'argon', 20, 10, 20, 0, 100],
+              [macro.units_size_l_xenon_01_collector_macro, 'argon', 20, 10, 20, 0, 100]
+            ],
+            $build = [
+              [macro.units_size_l_xenon_outk_macro, 'argon', 20, 10, 20, 50, 50]
+            ],
+            $other = [
+              [macro.units_size_l_kit_repairship_macro, 'argon', 80, 20, 50, 0, 0]
+            ]
+          ],
+          $size_xl = table[
+            $fight = [
+              [macro.units_size_xl_capital_destroyer_1_mk2_macro,  'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_capital_destroyer_2_mk2_macro,  'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_repairship_02_macro, 'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_5_macro,     'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_dc_macro,    'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_mk2_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_mk5_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_mk6_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_pir_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_x_macro,     'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_xc_macro,    'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_y_macro,     'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_02_yz_macro,    'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_03_mk2_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_04_dw_macro,    'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_04_mk2_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_cs_omicron_ship_04_mk3_macro,   'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_fort_macro,                     'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_kit_destroyer_01_macro,         'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_kit_pirate_10_macro,            'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_player_behemoth_macro,          'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_player_chimera_macro,           'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_player_hades_macro,             'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_split_m1s_macro,                'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_split_m2r_macro,                'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_split_m2s_macro,                'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_van_destroyer_macro,            'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_van_destroyer_mk2_macro,        'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_xenon_01_c_macro,               'argon', 40, 10, 100, 0, 0],
+              [macro.units_size_xl_xenon_newi_macro,               'argon', 40, 10, 100, 0, 0]
+            ],
+            $trade = [
+              [macro.units_size_xl_capital_destroyer_2_cargo_macro, 'argon', 25, 50, 75, 0, 0],
+              [macro.units_size_xl_kit_cargo_01_macro,              'argon', 20, 100, 30, 0, 0],
+              [macro.units_size_xl_split_tls_macro,                 'argon', 20, 100, 30, 0, 0]
+            ],
+            $mine = [
+              [macro.units_size_xl_split_tls_gas_macro, 'argon', 20, 10, 20, 0, 100],
+              [macro.units_size_xl_split_tls_ore_macro, 'argon', 20, 10, 20, 100, 0]
+            ],
+            $build = [
+              [macro.units_size_xl_builder_pir_macro,        'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_pir2_macro,       'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_pir3_macro,       'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_player_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_player2_macro,    'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_player3_macro,    'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_2_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_3_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_dv_2_macro,  'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_dv_3_macro,  'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_ol_2_macro,  'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_ship_ol_3_macro,  'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hoa_macro,        'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hoa2_macro,       'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hoa3_macro,       'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_pmxe_macro,       'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hv_macro,         'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hv2_macro,        'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_hv3_macro,        'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_xenon_next_macro, 'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_player_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_xenon_macro,      'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_xenon2_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_xenon3_macro,     'argon', 20, 10, 20, 50, 50],
+              [macro.units_size_xl_builder_outpost_macro,    'argon', 20, 10, 20, 50, 50]
+            ],
+            $other = [
+              [macro.units_size_xl_capital_destroyer_2_care_macro, 'argon', 40, 10, 100, 0, 0]
+            ]
+          ]
         ]" />
         <do_if value="event.param == 'SimoomsLanternNF_summon_ship'">
-          <add_player_choice_sub text="'Size L'" position="top_left" section="SimoomsLanternNF_summon_ship_size_l" comment="Size L" />
-          <add_player_choice_sub text="'Size XL'" position="left" section="SimoomsLanternNF_summon_ship_size_xl" comment="Size XL" />
+          <add_player_choice_sub text="'Size XL'" position="top_left" section="SimoomsLanternNF_summon_ship_size_xl" comment="Size XL" />
+          <add_player_choice_sub text="'Size L'" position="left" section="SimoomsLanternNF_summon_ship_size_l" comment="Size L" />
           <add_player_choice_return text="{1002,20}" position="bottom_right" comment="(Back)" />
         </do_if>
         <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_size_l'">
-          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_l_fight, 0]" />
-          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_l_trade, 0]" />
-          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_l_mine, 0]" />
-          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_l_build, 0]" />
-          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_l_other, 0]" />
+          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$fight, 0]" />
+          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$trade, 0]" />
+          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$mine, 0]" />
+          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$build, 0]" />
+          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_l.$other, 0]" />
           <add_player_choice_return text="{1002,20}" comment="(Back)" />
         </do_elseif>
         <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_size_xl'">
-          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_xl_fight, 0]" />
-          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_xl_trade, 0]" />
-          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_xl_mine, 0]" />
-          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_xl_build, 0]" />
-          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$ships_xl_other, 0]" />
+          <add_player_choice_sub text="'Fight'" position="top_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$fight, 0]" />
+          <add_player_choice_sub text="'Trade'" position="left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$trade, 0]" />
+          <add_player_choice_sub text="'Mine'" position="bottom_left" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$mine, 0]" />
+          <add_player_choice_sub text="'Build'" position="top_right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$build, 0]" />
+          <add_player_choice_sub text="'Other'" position="right" section="SimoomsLanternNF_summon_ship_select" choiceparam="[$shiptpl.$size_xl.$other, 0]" />
           <add_player_choice_return text="{1002,20}" comment="(Back)" />
         </do_elseif>
         <do_elseif value="event.param == 'SimoomsLanternNF_summon_ship_select'">
@@ -181,16 +185,7 @@
           </do_if>
           <remove_value name="$ships" />
           <remove_value name="$page" />
-          <remove_value name="$ships_l_fight" />
-          <remove_value name="$ships_l_trade" />
-          <remove_value name="$ships_l_mine" />
-          <remove_value name="$ships_l_build" />
-          <remove_value name="$ships_l_other" />
-          <remove_value name="$ships_xl_fight" />
-          <remove_value name="$ships_xl_trade" />
-          <remove_value name="$ships_xl_mine" />
-          <remove_value name="$ships_xl_build" />
-          <remove_value name="$ships_xl_other" />
+          <remove_value name="$shiptpl" />
         </do_elseif>
       </actions>
     </cue>

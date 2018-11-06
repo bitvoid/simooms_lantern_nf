@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<content id="simooms_lantern_nf" name="Simoom's Lantern: New Frontier" author="bitvoid" version="020" date="2018-11-04" save="false">
+<content id="simooms_lantern_nf" name="Simoom's Lantern: New Frontier" author="bitvoid" version="030" date="2018-11-04" save="false">
   <dependency version="430" />
   <!-- Simooms Lantern -->
   <dependency id="ws_684926232" version="099" />

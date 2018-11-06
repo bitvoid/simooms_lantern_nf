@@ -2,7 +2,15 @@
 
 ## Installation
 
-Put all files into "X Rebirth\extensions\simooms_lantern_nf".
+Copy "simooms_lantern_nf" to your X Rebirth extension folder so that in the end it looks like this:
+
+```
+X Rebirth\extensions\simooms_lantern_nf\
+    extensions\
+    md\
+    content.xml
+    mainmenuentriestop.txt
+```
 
 ## Usage
 

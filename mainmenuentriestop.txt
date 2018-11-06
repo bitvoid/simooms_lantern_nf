@@ -1,0 +1,12 @@
+local d = {}
+d[0] = {
+    category = "info",
+    insertions = {{
+        section = "SimoomsLanternNF_main",
+        icon = "mm_ic_navig_galaymap",
+        name = ReadText(100000, 1) .. ": New Frontier",
+        info = ""
+    }}
+}
+
+return d

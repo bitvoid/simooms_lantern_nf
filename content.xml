@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content id="simooms_lantern_nf" name="Simoom's Lantern: New Frontier" author="bitvoid" version="020" date="2018-11-04" save="false">
   <dependency version="430" />
+  <!-- Simooms Lantern -->
   <dependency id="ws_684926232" version="099" />
+  <!-- Sidebar Extender -->
+  <dependency id="ws_310835139" version="060" /> 
   <dependency id="NewFrontier" version="100" />
   <!-- optional="true": No error if dependency missing/disabled. This is only used to define the loading order of extensions (dependencies are loaded first). -->
   <dependency id="ego_dlc_teladi_outpost" version="100" optional="true" />

@@ -3,7 +3,7 @@
   <cues>
     <library name="Init">
       <actions>
-        <set_value name="$debugchance" exact="0" />
+        <set_value name="$debugchance" exact="100" />
         <!-- Ship templates -->
         <!-- [macro, crew faction, build drones, cargo drones, defence drones, mining drones (ore), mining drones (gas)] -->
         <set_value name="$shiptable" exact="table[
@@ -172,6 +172,11 @@
         <remove_value name="$debugchance" />
       </actions>
     </library>
+    <cue name="Settings">
+      <actions>
+        <set_value name="$combatdrones" exact="true" />
+      </actions>
+    </cue>
     <cue name="SectionHandler" instantiate="true" namespace="this">
       <conditions>
         <check_any>
@@ -182,11 +187,12 @@
       <actions>
         <include_actions ref="Init" />
         <debug_text text="'Event: %s param: %s param2: %s param3: %s'.[event.name, event.param, event.param2, event.param3]" chance="$debugchance" filter="general" />
-        <do_if value="event.param == 'SimoomsLanternNF_choosesize'">
+        <do_if value="event.param == 'SimoomsLanternNF_main'">
           <add_player_choice_sub text="'Size XL'" position="top_left" section="SimoomsLanternNF_capitalship_choosepurpose" choiceparam="$shiptable.$size_xl" comment="Size XL" />
           <add_player_choice_sub text="'Size L'" position="left" section="SimoomsLanternNF_capitalship_choosepurpose" choiceparam="$shiptable.$size_l" comment="Size L" />
           <add_player_choice_sub text="'Size M'" position="bottom_left" section="SimoomsLanternNF_smallship_choosepurpose" choiceparam="$shiptable.$size_m" comment="Size M" />
           <add_player_choice_sub text="'Size S'" position="top_right" section="SimoomsLanternNF_smallship_choosepurpose" choiceparam="$shiptable.$size_s" comment="Size S" />
+          <add_player_choice_sub text="'Settings'" position="right" section="SimoomsLanternNF_settings" comment="Settings" />
           <add_player_choice_return text="{1002,20}" position="bottom_right" comment="(Back)" />
         </do_if>
         <do_elseif value="event.param == 'SimoomsLanternNF_capitalship_choosepurpose'">
@@ -207,6 +213,11 @@
             <do_all exact="$page * 4">
               <remove_value name="$current.{1}" />
             </do_all>
+            <do_if value="not Settings.$combatdrones">
+              <do_all exact="$current.count" counter="$i">
+                <set_value name="$current.{$i}.{5}" exact="0" />
+              </do_all>
+            </do_if>
             <add_player_choice_subconv text="$current.{1}.{1}.name" tooltip="$current.{1}.{1}.id" position="top_left" conversation="SimoomsLantern_summon_ship_player" convparam="$current.{1}" actor="player.computer" chance="100 * ($current.count ge 1)" />
             <add_player_choice_subconv text="$current.{2}.{1}.name" tooltip="$current.{2}.{1}.id" position="left" conversation="SimoomsLantern_summon_ship_player" convparam="$current.{2}" actor="player.computer" chance="100 * ($current.count ge 2)" />
             <add_player_choice_subconv text="$current.{3}.{1}.name" tooltip="$current.{3}.{1}.id" position="bottom_left" conversation="SimoomsLantern_summon_ship_player" convparam="$current.{3}" actor="player.computer" chance="100 * ($current.count ge 3)" />
@@ -256,6 +267,13 @@
             <remove_value name="$ships" />
             <remove_value name="$page" />
           </do_if>
+        </do_elseif>
+        <do_elseif value="event.param == 'SimoomsLanternNF_settings'">
+          <do_if value="event.param2 == 'toggle_combatdrones'">
+            <set_value name="Settings.$combatdrones" exact="not Settings.$combatdrones" />
+          </do_if>
+          <add_player_choice text="'Combat Drones: %s'.[if Settings.$combatdrones then 'yes' else 'no']" tooltip="'Add combat drones to spawned ships?'" position="top_left" section="SimoomsLanternNF_settings" choiceparam="'toggle_combatdrones'" />
+          <add_player_choice_return text="{1002,20}" position="bottom_right" comment="(Back)" />
         </do_elseif>
         <include_actions ref="Cleanup" />
       </actions>
